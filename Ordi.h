@@ -7,7 +7,8 @@
 #include <chrono>
 #include <bitcoincore_rpc.h>
 #include <log.h>
-#include <rusty_leveldb.h>
+#include <leveldb/db.h>  
+#include <leveldb/write_batch.h> // leveldb::WriteBatch
 #include <thiserror.h>
 #include <vector>
 #include <string> 
@@ -122,7 +123,7 @@ public:
 
         index = Index(fs::path(options.btc_data_dir));
 
-        rusty_leveldb::Options leveldb_options;
+        leveldb::Options leveldb_options;
         leveldb_options.max_file_size = 2 << 25;
 
         status = rusty_leveldb::DB::open(ordi_data_dir / ORDI_STATUS, leveldb_options);
