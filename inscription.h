@@ -2,8 +2,7 @@
 #include <vector>
 #include <array>
 #include <iterator>
-#include <algorithm>
-#include <cstdint>
+#include <algorithm> 
 #include <optional>
 #include <stdexcept>
 #include <bitcoin/system.hpp>
